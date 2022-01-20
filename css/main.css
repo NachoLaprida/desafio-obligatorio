@@ -1,5 +1,11 @@
-header {
-  background: brown; }
-
-main {
-  background: blue; }
+/* ------------ MAIN --------------- */
+/* ------- HEADER ---------- */
+header .navbar {
+  background-color: yellowgreen; }
+  header .navbar .container-fluid .navbar-brand .logo {
+    height: 60px;
+    width: 60px; }
+  header .navbar .container-fluid .navbar-collapse .navbar-nav .nav-item .nav-link {
+    color: #fff; }
+  header .navbar .container-fluid .navbar-collapse .d-flex .btn {
+    color: #fff; }

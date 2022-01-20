@@ -1,11 +1,10 @@
-header{
-    background: brown;
-    .navbar{
-        .container-fluid{
-            
-        }
-    }
-}
-main{
-    background: blue;
-}
+/* ------------ MAIN --------------- */
+
+@import "variables";
+@import "globales";
+@import "componentes/header";
+@import "componentes/footer";
+@import "paginas/index";
+@import "paginas/productos";
+@import "paginas/nosotros";
+@import "mediaqueries";

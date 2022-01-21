@@ -1,0 +1,32 @@
+main{
+    h1{
+        font-size: 60px;
+        -webkit-text-fill-color: #fff;
+        -webkit-text-stroke: black 2px; 
+    }
+    .bienvenida{
+        .fila{
+            display: grid;
+            grid-template-columns: auto;
+            padding: 10px;
+            .columna-text{
+                text-align: center;
+                padding: 5px;
+                .contenedor-text{
+                    font-size: 14px;
+                }
+            }
+            .columna-img{
+                justify-self: center;
+                padding: 5px;
+                box-shadow: 0px 15px 15px rgba(0, 0, 0, .5);
+                .contenedor-img{
+                    img{
+                        height: 240px;
+                        width: 300px;
+                    }
+                }
+            }
+        }
+    }
+}

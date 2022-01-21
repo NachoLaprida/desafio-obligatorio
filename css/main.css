@@ -9,3 +9,39 @@ header .navbar {
     color: #fff; }
   header .navbar .container-fluid .navbar-collapse .d-flex .btn {
     color: #fff; }
+
+main h1 {
+  font-size: 60px;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: black 2px; }
+
+main .bienvenida .fila {
+  display: grid;
+  grid-template-columns: auto;
+  padding: 10px; }
+  main .bienvenida .fila .columna-text {
+    text-align: center;
+    padding: 5px; }
+    main .bienvenida .fila .columna-text .contenedor-text {
+      font-size: 14px; }
+  main .bienvenida .fila .columna-img {
+    justify-self: center;
+    padding: 5px;
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5); }
+    main .bienvenida .fila .columna-img .contenedor-img img {
+      height: 240px;
+      width: 300px; }
+
+@media screen and (min-width: 768px) {
+  /* index */
+  main h1 {
+    /* font-size: 60px;
+            -webkit-text-fill-color: #fff;
+            -webkit-text-stroke: black 2px;  */ }
+  main .bienvenida .fila {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 20px; }
+    main .bienvenida .fila .columna-text {
+      text-align: left;
+      align-self: center; } }

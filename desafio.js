@@ -49,17 +49,18 @@ else if (saludo == 3) {
     alert("el precio de producto 3 es $" + producto3)
 }
 
+
+
+
 let cuota = parseInt(prompt("Como vas a pagar\n"+"1 Efectivo\n"+"2 Cuotas\n"+"3 Cancelar\n"))
-
-
 switch(cuota) {
-
+    
     case 1:
         alert("Abonas en efectivo")
         break
 
     case 2:
-        alert("Abonas en 12 cuotas con interes de %10")
+        alert("Abonas en cuotas con interes de %10")
         break
     
     case 3:
@@ -70,21 +71,37 @@ switch(cuota) {
             alert("No pusiste ninguno de los botones")
             break;
 }
+    
+
+
+
+let installment = parseInt(prompt("Cuantas cuotas deseas?"))
 
 const suma = (a, b) => a + b
 const resta = (a, b) => a - b
 const div = (a, b) => a / b
+const mult = (a, b) => a * b
 const iva = (x) => x * 0.21
 
-let precioFinalA = suma(producto1, iva(producto1))
+const fee = (x) => x * 0.1
+
+let precioFinalA = suma(producto1, iva(producto1))  
 let precioFinalB = suma(producto2, iva(producto2))
 let precioFinalC = suma(producto3, iva(producto3))
-let cuotaProductoA = div(precioFinalA, 12)
-let cuotaProductoB = div(precioFinalB, 12)
-let cuotaProductoC = div(precioFinalC, 12)
-let precioTotalCuotaA = suma(cuotaProductoA, 12)
-let precioTotalCuotaB = suma(cuotaProductoB, 12)
-let precioTotalCuotaC = suma(cuotaProductoC, 12)
+let cuotaProductoA = div(precioFinalA, installment) 
+let cuotaProductoB = div(precioFinalB, installment)
+let cuotaProductoC = div(precioFinalC, installment)
+
+let precioCuotaA = (div(precioFinalA, installment))*0.1
+let precioCuotaB = (div(precioFinalB, installment))*0.1
+let precioCuotaC = (div(precioFinalC, installment))*0.1
+
+
+let precioTotalCuotaA = suma(cuotaProductoA, fee(cuotaProductoA)) 
+let precioTotalCuotaB = suma(cuotaProductoB, fee(cuotaProductoB))
+let precioTotalCuotaC = suma(cuotaProductoC, fee(cuotaProductoC))
+
+
 
 if(cuota == 1 && saludo == 1) {
     alert("el precio con iva es de $" + precioFinalA)
@@ -96,17 +113,19 @@ else if (cuota == 1 && saludo == 3) {
         alert("el precio con iva es de $" + precioFinalC)
 }
 else if (cuota == 2 && saludo == 1) {
-    alert("El costo de cada cuota queda en $" + cuotaProductoA).
+    alert("El costo de cada cuota queda en $" + precioCuotaA)
     alert("El precio Total seria de $" + precioTotalCuotaA)
 }
 else if (cuota == 2 && saludo == 2) {
-    alert("El costo de cada cuota queda en $" + cuotaProductoB)
+    alert("El costo de cada cuota queda en $" + precioCuotaB)
     alert("El precio Total seria de $" + precioTotalCuotaB)
 }
 else if (cuota == 2 && saludo == 3) {
-    alert("El costo de cada cuota queda en $" + cuotaProductoC)
+    alert("El costo de cada cuota queda en $" + precioCuotaC)
     alert("El precio Total seria de $" + precioTotalCuotaC)
 }
+
+
 
 
 

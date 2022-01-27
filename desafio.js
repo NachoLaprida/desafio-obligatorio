@@ -131,6 +131,40 @@ if( saludo !=4 ) {
     }
 }
 
+//OBJETOS
+class Producto {
+    constructor(product, price, stock) {
+        this.product = product
+        this.price = price
+        this.stock = stock
+    }
+    prueba(){
+        console.log("El precio de " + (this.product) + " es de " + (this.price) + " y contamos con " + (this.stock) + " unidades")
+    }
+    sumarIva(){
+        this.price = this.price *1.21
+    }
+}
+
+/* let product1 = new Productos("Alfajor", producto1, 5)
+product1.prueba()
+product1.sumarIva()
+let product2 = new Productos("Bombon", producto2, 8)
+product2.prueba()
+product2.sumarIva()
+let product3 = new Productos("Gomitas", producto3, 20)
+product3.prueba()
+product3.sumarIva() */
+
+const productos = []
+productos.push(new Producto("Alfajor", producto1, 5))
+productos.push(new Producto("Bombon", producto2, 8))
+productos.push(new Producto("Gomitas", producto3, 20))
+
+for(const producto of productos ) {
+    producto.sumarIva()
+}
+console.log(productos)
 
 
 

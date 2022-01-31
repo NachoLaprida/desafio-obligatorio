@@ -5,11 +5,15 @@ const mult = (a, b) => a * b
 const iva = (x) => x * 0.21
 const fee = (x) => x * 0.1
 
+
+
 for(i = 0; i < 5; i++) {
     let bienvenido = prompt("Ingrese nombre").trim().toLocaleUpperCase()
+    
     if (bienvenido !="") {
-    alert("Bienvenido a nuestra Tienda, " + bienvenido)
-    break}
+        alert("Bienvenido a nuestra Tienda, " + bienvenido)
+        break
+    }
     
     else if (bienvenido == ""){
         alert("Falta nombre")
@@ -17,8 +21,6 @@ for(i = 0; i < 5; i++) {
 }
 
 let saludo = parseInt(prompt("Somos la mejor tienda de venta de prodcutos de regalos: \nPresione 1 por el producto 1\nPresione 2 por el producto 2\nPresione 3 por el producto 3\nPresione 4 sino queres comprar"))
-
-
 
 switch(saludo) {
 
@@ -105,9 +107,6 @@ if( saludo !=4 ) {
         let cuotaProductoB = (div(precioFinalProductoB, installment))*1.1
         let cuotaProductoC = (div(precioFinalProductoC, installment))*1.1
 
-        /* let precioCuotaA = (div(precioFinalProductoA, installment))*1.1  1210 / 6 = 201.66 *1.1 = 221.83
-        let precioCuotaB = (div(precioFinalProductoB, installment))*1.1
-        let precioCuotaC = (div(precioFinalProductoC, installment))*1.1 */
 
 
         let precioTotalCuotaA = mult(cuotaProductoA, installment) /* 221.83  */
@@ -135,36 +134,54 @@ if( saludo !=4 ) {
 class Producto {
     constructor(product, price, stock) {
         this.product = product
-        this.price = price
-        this.stock = stock
+        this.price = parseFloat(price)
+        this.stock = parseFloat(stock)
     }
-    prueba(){
+    /* prueba(){
         console.log("El precio de " + (this.product) + " es de " + (this.price) + " y contamos con " + (this.stock) + " unidades")
-    }
+    } */
     sumarIva(){
         this.price = this.price *1.21
     }
 }
 
-/* let product1 = new Productos("Alfajor", producto1, 5)
-product1.prueba()
-product1.sumarIva()
-let product2 = new Productos("Bombon", producto2, 8)
-product2.prueba()
-product2.sumarIva()
-let product3 = new Productos("Gomitas", producto3, 20)
-product3.prueba()
-product3.sumarIva() */
 
+//ARRAYS
 const productos = []
-productos.push(new Producto("Alfajor", producto1, 5))
-productos.push(new Producto("Bombon", producto2, 8))
-productos.push(new Producto("Gomitas", producto3, 20))
+productos.push(new Producto(prompt("Ingrese nombre del producto"), prompt("Ingrese precio"), prompt("Ingrese unidades")))
+productos.push(new Producto(prompt("Ingrese nombre del producto"), prompt("Ingrese precio"), prompt("Ingrese unidades")))
+productos.push(new Producto(prompt("Ingrese nombre del producto"), prompt("Ingrese precio"), prompt("Ingrese unidades")))
+
 
 for(const producto of productos ) {
     producto.sumarIva()
 }
 console.log(productos)
+
+//METODO DE BUSQUEDA
+const baratos = productos.filter(item => item.price <= 1500)
+console.log(baratos)
+
+const preCios = productos.map(obj => obj.price)
+console.log(preCios)
+
+baratos.forEach(item => {
+    alert("los productos mas baratos son "+ item.product)
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

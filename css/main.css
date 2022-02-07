@@ -10,6 +10,44 @@ header .navbar {
   header .navbar .container-fluid .navbar-collapse .d-flex .btn {
     color: #fff; }
 
+/* ---------------  FOOTER ---------------------- */
+footer {
+  background-color: #262626;
+  color: #fff; }
+  footer .container-fluid .row .develope h2 {
+    font-size: 24px; }
+  footer .container-fluid .row .develope p {
+    color: #bdb4b4; }
+  footer .container-fluid .row .explorer h2 {
+    font-size: 24px; }
+  footer .container-fluid .row .explorer .box {
+    padding-left: 0; }
+    footer .container-fluid .row .explorer .box a {
+      text-decoration: none;
+      color: #bdb4b4; }
+      footer .container-fluid .row .explorer .box a:hover {
+        text-decoration: underline; }
+  footer .container-fluid .row .social-network h2 {
+    font-size: 24px; }
+  footer .container-fluid .row .social-network a {
+    padding: 10px; }
+    footer .container-fluid .row .social-network a i {
+      font-size: 30px; }
+  footer .container-fluid .row .legal {
+    display: flex;
+    flex-direction: column;
+    align-content: center; }
+    footer .container-fluid .row .legal h2 {
+      font-size: 24px;
+      color: #fff; }
+    footer .container-fluid .row .legal .box {
+      padding-left: 0; }
+      footer .container-fluid .row .legal .box li a {
+        text-decoration: none;
+        color: #bdb4b4; }
+        footer .container-fluid .row .legal .box li a:hover {
+          text-decoration: underline; }
+
 main h1 {
   font-size: 60px;
   -webkit-text-fill-color: #fff;
@@ -44,4 +82,7 @@ main .bienvenida .fila {
     padding: 20px; }
     main .bienvenida .fila .columna-text {
       text-align: left;
-      align-self: center; } }
+      align-self: center; }
+  /* --- footer --- */
+  footer .container-fluid .row .col-4 .link-arriba {
+    width: 40%; } }

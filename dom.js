@@ -1,4 +1,4 @@
-
+// editando html
 
 let texto = document.getElementById("componente")
 
@@ -29,10 +29,16 @@ for(const producto of productos) {
     let contenedor = document.createElement("div")
 
     contenedor.innerHTML = `
-        <h3> ID: ${producto.id}</h3>
-        <p> Producto: ${producto.name}</p>
-        <b> $ ${producto.price}</b>
-        <hr>
+    
+        <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-12 p-2">
+                <h3> ID: ${producto.id}</h3>
+                <p> Producto: ${producto.name}</p>
+                <b> $ ${producto.price}</b>
+                <hr>
+            </div>
+        </div>
+    
 `
 padre.appendChild(contenedor)
 }

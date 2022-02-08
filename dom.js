@@ -1,16 +1,15 @@
 // editando html
-
 let texto = document.getElementById("componente")
-
 texto.innerHTML = "Productos disponibles"
 
+// debes crear un contenedor
+let contenedorTitulo = document.getElementById("newTitulo");
+
 //Add titulo
-let titulo2 = document.createElement("h1")
-
-titulo2.innerHTML = "<h3>Productos Limitados</h3>"
-
-
-document.body.append(titulo2)
+let titulo2 = document.createElement("div");
+titulo2.innerHTML = "<h3>Productos Limitados</h3>";
+contenedorTitulo.appendChild(titulo2);
+// document.texto.append(titulo2);
 
 
 //add productos
@@ -22,7 +21,7 @@ const productos = [
     {id: 4, name: "Portaretrato", price: 60}
 ]
 
-const padre = document.getElementById("productos")
+const padre = document.getElementById("productosTienda")
 
 for(const producto of productos) {
 

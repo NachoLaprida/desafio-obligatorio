@@ -180,20 +180,6 @@ const RmCart = (e) => {
     mostrarCarritoCompras()
 }
 
-
-const updateCache = () => {
-    const cartJSON = JSON.stringify(Cart)
-    localStorage.setItem("productOnCart", cartJSON)
-}
-
-const getCache = () => {
-    const cartJSON = localStorage.getItem("productOnCart")
-    if(cartJSON) Cart = JSON.parse(cartJSON)
-    mostrarCarritoCompras()
-}
-
-getCache()
-
 /* const rmProduct = (id, stock = 1) => {
     const product = Cart.find(p => p.id == id)
     if(!product) {
@@ -215,6 +201,22 @@ const clickProd2 = () => {
         btn.onclick = addCart
     }
 } */
+
+//LocalStorage y cache
+const updateCache = () => {
+    const cartJSON = JSON.stringify(Cart)
+    localStorage.setItem("productOnCart", cartJSON)
+}
+
+const getCache = () => {
+    const cartJSON = localStorage.getItem("productOnCart")
+    if(cartJSON) Cart = JSON.parse(cartJSON)
+    mostrarCarritoCompras()
+}
+
+getCache()
+
+
 
 
 funcionProductos()

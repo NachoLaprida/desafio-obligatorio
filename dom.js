@@ -52,7 +52,7 @@ ti.appendChild(lo);
 // document.texto.append(titulo2);
 
 
-
+//mostrar carrito de compras con los productos seleccionados
 const mostrarCarritoCompras = () => {
     const boxProducts = document.getElementById("productOnCart")
     let allProducts =""
@@ -65,6 +65,8 @@ const mostrarCarritoCompras = () => {
             <i>Cantidad: ${producto.quantity}</i>
             <p class="card-text">Precio por unidad: $ ${producto.unit_price}</p>
             <p class="card-text">Total: $ ${producto.total}</p>
+            <button class="Quitar btn btn-danger" id="ID-${producto.id}">Quitar del Carrito 🛒</button>
+
         </div>
     </div>
     `
@@ -73,8 +75,10 @@ const mostrarCarritoCompras = () => {
     boxProducts.innerHTML = allProducts
 
     clickProd()
+    clickProd2()
 }
 
+//mostrar productos en la page
 const funcionProductos = () => {
     const boxProducts = document.getElementById("listado")
     let allProducts =""
@@ -87,6 +91,7 @@ const funcionProductos = () => {
                     <h5 class="card-title">${producto.name}</h5>
                     <p class="card-text">$ ${producto.price}</p>
                     <button class="Agregar btn btn-success" id="ID-${producto.id}">Agregar al Carrito 🛒</button>
+                    
                 </div>
             </div>
     `
@@ -97,6 +102,7 @@ const funcionProductos = () => {
     clickProd()
 }
 
+//evento para agregar
 const clickProd = () => {
 
     const btnAddCarts = document.getElementsByClassName("Agregar")
@@ -117,8 +123,98 @@ const addCart = (e) => {
     } else {
         Cart.push(productCart)
     }
+    updateCache()
+    mostrarCarritoCompras()
+}
+
+//quitar productos del carrito
+
+const clickProd2 = () => {
+
+    const btnRmCarts = document.getElementsByClassName("Quitar")
+    for(const btn of btnRmCarts) {
+        btn.onclick = RmCart
+    }
+}
+
+const RmCart = (e) => {
+    const productId = parseInt(e.target.id.split("-")[1])
+
+    /* const product = Cart.find(p => p.id == productId) */
+    /* const productCart = new ProductCart(product) */
+
+    const productInCart2 = Cart.find(p => p.id == productId)
+    if(!productInCart2) {
+        console.log("Product not found on cart") 
+        return
+    }
+
+    productInCart2.stock -= Products.stock
+    
+    if(productInCart2.stock < 1) {
+        const idx = Cart.indexOff(p => p.id == id)
+        Cart.splice(idx - 1, 1)
+    }
+    const clickProd2 = () => {
+
+        const btnRmCarts = document.getElementsByClassName("Quitar")
+        for(const btn of btnRmCarts) {
+            btn.onclick = RmCart
+        }
+    }
+
+
+
+
+   /*  if(productInCart2) {
+        productInCart2.splice()
+    } else {
+        Cart.push(productCart)
+    }
+    if(productInCart2.stock < 1) {
+        const idx = Cart.indexOff(p => p.id == id)
+        Cart.splice(idx - 1, 1)
+    } */
+
 
     mostrarCarritoCompras()
 }
+
+
+const updateCache = () => {
+    const cartJSON = JSON.stringify(Cart)
+    localStorage.setItem("productOnCart", cartJSON)
+}
+
+const getCache = () => {
+    const cartJSON = localStorage.getItem("productOnCart")
+    if(cartJSON) Cart = JSON.parse(cartJSON)
+    mostrarCarritoCompras()
+}
+
+getCache()
+
+/* const rmProduct = (id, stock = 1) => {
+    const product = Cart.find(p => p.id == id)
+    if(!product) {
+        console.log("Product not found on cart") 
+        return
+    }
+
+    product.stock -= stock
+
+    if(product.stock < 1) {
+        const idx = Cart.indexOff(p => p.id == id)
+        Cart.splice(idx - 1, 1)
+    }
+}
+const clickProd2 = () => {
+
+    const btnRmCarts = document.getElementsByClassName("Agregar")
+    for(const btn of btnRmCarts) {
+        btn.onclick = addCart
+    }
+} */
+
 
 funcionProductos()

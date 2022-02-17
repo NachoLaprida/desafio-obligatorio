@@ -63,6 +63,7 @@ const mostrarCarritoCompras = () => {
         <div class="card-body">
             <h5 class="card-title">${producto.name}</h5>
             <i>Cantidad: ${producto.quantity}</i>
+            <p class="card-text">Tamaño: ${producto.size}</p>
             <p class="card-text">Precio por unidad: $ ${producto.unit_price}</p>
             <p class="card-text">Total: $ ${producto.total}</p>
             <button class="Quitar btn btn-danger" id="ID-${producto.id}">Quitar del Carrito 🛒</button>
@@ -90,6 +91,7 @@ const funcionProductos = () => {
                 <div class="card-body">
                     <h5 class="card-title">${producto.name}</h5>
                     <p class="card-text">$ ${producto.price}</p>
+                    <p class="card-text">Tamaño: ${producto.size}</p>
                     <button class="Agregar btn btn-success" id="ID-${producto.id}">Agregar al Carrito 🛒</button>
                     
                 </div>
@@ -149,19 +151,20 @@ const RmCart = (e) => {
         return
     }
 
-    productInCart2.stock -= Products.stock
+    productInCart2.quantity--
     
-    if(productInCart2.stock < 1) {
-        const idx = Cart.indexOff(p => p.id == id)
-        Cart.splice(idx - 1, 1)
+    if(productInCart2.quantity < 1) {
+        const idx = Cart.indexOf(productInCart2)
+        Cart.splice(idx , 1)
     }
-    const clickProd2 = () => {
+
+    /* const clickProd2 = () => {
 
         const btnRmCarts = document.getElementsByClassName("Quitar")
         for(const btn of btnRmCarts) {
             btn.onclick = RmCart
         }
-    }
+    } */
 
 
 
@@ -176,7 +179,7 @@ const RmCart = (e) => {
         Cart.splice(idx - 1, 1)
     } */
 
-
+    updateCache()
     mostrarCarritoCompras()
 }
 
@@ -216,7 +219,38 @@ const getCache = () => {
 
 getCache()
 
-
-
-
 funcionProductos()
+
+//login////////////////////////////////////////
+
+let login = document.getElementById("log")
+let boxlogin = document.createElement("div")
+login.appendChild(boxlogin)
+boxlogin.innerHTML = `
+    <form class="container">
+        <h3>Registrate para poder empezar a comprar nuestros productos</h3>
+        <div>
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Ingresa nombre de usuario</label>
+            <input type="text" class="form-control" placeholder="Usuario" aria-label="First name">
+        </div>
+        <div>
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Ingresa email</label>
+            <input type="email" class="form-control" id="colFormLabel" placeholder="Email">
+        </div>
+        <div>
+            <label for="colFormLabel" class="col-sm-2 col-form-label">Ingresa contraseña</label>
+            <input type="password" class="form-control" placeholder="Contraseña">
+        </div>
+        <div class="py-2 text-center">
+            <button class="btn btn-success p-2" type="submit">Registrar</button>  
+        </div>
+    </form>
+`
+
+//falta desarrollar el login
+
+
+
+
+
+

@@ -152,10 +152,12 @@ const RmCart = (e) => {
     }
 
     productInCart2.quantity--
-    
+    productInCart2.total -= productInCart2.unit_price
+
     if(productInCart2.quantity < 1) {
         const idx = Cart.indexOf(productInCart2)
         Cart.splice(idx , 1)
+        
     }
 
     /* const clickProd2 = () => {

@@ -55,23 +55,26 @@ ti.appendChild(lo);
 //mostrar carrito de compras con los productos seleccionados
 const mostrarCarritoCompras = () => {
     const boxProducts = document.getElementById("productOnCart")
-    let allProducts =""
+    let allProducts = ""
     Cart.forEach(producto => {
-        allProducts +=`
-        <div class="card" style="width: 18rem;">
-        <img src="${producto.img}" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">${producto.name}</h5>
-            <i>Cantidad: ${producto.quantity}</i>
-            <p class="card-text">Tamaño: ${producto.size}</p>
-            <p class="card-text">Precio por unidad: $ ${producto.unit_price}</p>
-            <p class="card-text">Total: $ ${producto.total}</p>
-            <button class="Quitar btn btn-danger" id="ID-${producto.id}">Quitar del Carrito 🛒</button>
+        allProducts += `
+    
+        
+        <tbody>
+            <tr>
+                <th scope="row">${producto.id}</th>
+                    <td>${producto.name}</td>
+                    <td>${producto.quantity}</td>
+                    <td>${producto.size}</td>
+                    <td>${producto.unit_price}</td>
+                    <td>${producto.total}</td>
+                    <td><button class="Quitar btn btn-danger" id="ID-${producto.id}">Quitar del Carrito 🛒</button></td>
+            </tr>
+        </tbody>
 
-        </div>
-    </div>
-    `
+        `
     })
+
 
     boxProducts.innerHTML = allProducts
 
@@ -79,14 +82,15 @@ const mostrarCarritoCompras = () => {
     clickProd2()
 }
 
+
 //mostrar productos en la page
 const funcionProductos = () => {
     const boxProducts = document.getElementById("listado")
-    let allProducts =""
+    let allProducts = ""
     Products.forEach(producto => {
-        allProducts +=`
+        allProducts += `
             
-            <div class="card" style="width: 18rem;">
+            <div class="card m-3" style="width: 18rem;">
                 <img src="${producto.img}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">${producto.name}</h5>
@@ -108,9 +112,10 @@ const funcionProductos = () => {
 const clickProd = () => {
 
     const btnAddCarts = document.getElementsByClassName("Agregar")
-    for(const btn of btnAddCarts) {
+    for (const btn of btnAddCarts) {
         btn.onclick = addCart
     }
+
 }
 
 const addCart = (e) => {
@@ -120,13 +125,13 @@ const addCart = (e) => {
     const productCart = new ProductCart(product)
 
     const productInCart = Cart.find(p => p.id == productId)
-    if(productInCart) {
-        productInCart.add()
-    } else {
-        Cart.push(productCart)
-    }
+
+    productInCart ? productInCart.add() : Cart.push(productCart) //operador ternario
+
     updateCache()
     mostrarCarritoCompras()
+    CalculateTotalCart()
+
 }
 
 //quitar productos del carrito
@@ -134,7 +139,7 @@ const addCart = (e) => {
 const clickProd2 = () => {
 
     const btnRmCarts = document.getElementsByClassName("Quitar")
-    for(const btn of btnRmCarts) {
+    for (const btn of btnRmCarts) {
         btn.onclick = RmCart
     }
 }
@@ -146,18 +151,19 @@ const RmCart = (e) => {
     /* const productCart = new ProductCart(product) */
 
     const productInCart2 = Cart.find(p => p.id == productId)
-    if(!productInCart2) {
+    /* if(!productInCart2) {
         console.log("Product not found on cart") 
         return
-    }
+    } */
 
     productInCart2.quantity--
     productInCart2.total -= productInCart2.unit_price
 
-    if(productInCart2.quantity < 1) {
+    if (productInCart2.quantity < 1) {
         const idx = Cart.indexOf(productInCart2)
-        Cart.splice(idx , 1)
-        
+        Cart.splice(idx, 1)
+
+
     }
 
     /* const clickProd2 = () => {
@@ -171,18 +177,19 @@ const RmCart = (e) => {
 
 
 
-   /*  if(productInCart2) {
-        productInCart2.splice()
-    } else {
-        Cart.push(productCart)
-    }
-    if(productInCart2.stock < 1) {
-        const idx = Cart.indexOff(p => p.id == id)
-        Cart.splice(idx - 1, 1)
-    } */
+    /*  if(productInCart2) {
+         productInCart2.splice()
+     } else {
+         Cart.push(productCart)
+     }
+     if(productInCart2.stock < 1) {
+         const idx = Cart.indexOff(p => p.id == id)
+         Cart.splice(idx - 1, 1)
+     } */
 
     updateCache()
     mostrarCarritoCompras()
+    CalculateTotalCart()
 }
 
 /* const rmProduct = (id, stock = 1) => {
@@ -215,13 +222,24 @@ const updateCache = () => {
 
 const getCache = () => {
     const cartJSON = localStorage.getItem("productOnCart")
-    if(cartJSON) Cart = JSON.parse(cartJSON)
+    if (cartJSON) Cart = JSON.parse(cartJSON)
     mostrarCarritoCompras()
+}
+
+const CalculateTotalCart = () => {
+    let suma = 0
+    Cart.forEach(p => suma += p.total)
+
+    const elemntTotal = document.getElementById("monto-total")
+    elemntTotal.innerHTML = `Total $${suma}`
 }
 
 getCache()
 
 funcionProductos()
+CalculateTotalCart()
+
+
 
 //login////////////////////////////////////////
 
@@ -250,6 +268,13 @@ boxlogin.innerHTML = `
 `
 
 //falta desarrollar el login
+
+
+
+
+
+
+
 
 
 

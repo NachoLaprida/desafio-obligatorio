@@ -103,10 +103,32 @@
             <h2 class="p-3">Nuestros Productos</h2>
             <div class="container">
                 <div id="listado" class="row">
-
                 </div>
                 <h2>Carrito de compras</h2>
-                <div id="productOnCart" class="row"></div>
+                <div  class="row"></div>
+                <table   class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Tamaño</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th scope="col">Total $</th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="productOnCart">
+
+                    </tbody>
+                </table>
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th class="col text-center fs-3" id="monto-total"></th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </section>
         
@@ -158,8 +180,9 @@
 
     <script src="bootstrap/js/bootstrap.js"></script>
     <!-- <script src="cart.js"></script> -->
-    <!-- <script src="info.js"></script> --> -->
+    <!-- <script src="info.js"></script> --> 
     <script src="data.js"></script>
+    <script src="class.js"></script>
     <script src="dom.js"></script>
     <!-- <script src="objeto.js"></script>
     <script src="desafio.js"></script> -->

@@ -112,6 +112,7 @@ const funcionProductos = () => {
 const clickProd = () => {
 
     const btnAddCarts = document.getElementsByClassName("Agregar")
+    
     for (const btn of btnAddCarts) {
         btn.onclick = addCart
     }
@@ -127,6 +128,15 @@ const addCart = (e) => {
     const productInCart = Cart.find(p => p.id == productId)
 
     productInCart ? productInCart.add() : Cart.push(productCart) //operador ternario
+    Toastify({
+        text: "Agregaste un producto al carrito",
+        duration: 1000,
+        gravity: `top`,
+        position: `left`,
+        style: {
+            background: `linear-gradient(to right, green, grey)`
+        }
+    }).showToast()
 
     updateCache()
     mostrarCarritoCompras()
@@ -165,54 +175,21 @@ const RmCart = (e) => {
 
 
     }
-
-    /* const clickProd2 = () => {
-
-        const btnRmCarts = document.getElementsByClassName("Quitar")
-        for(const btn of btnRmCarts) {
-            btn.onclick = RmCart
+    Toastify({
+        text: "Eliminaste un producto al carrito",
+        duration: 1000,
+        gravity: `top`,
+        position: `right`,
+        style: {
+            background: `linear-gradient(to right, red, grey)`
         }
-    } */
-
-
-
-
-    /*  if(productInCart2) {
-         productInCart2.splice()
-     } else {
-         Cart.push(productCart)
-     }
-     if(productInCart2.stock < 1) {
-         const idx = Cart.indexOff(p => p.id == id)
-         Cart.splice(idx - 1, 1)
-     } */
+    }).showToast()
 
     updateCache()
     mostrarCarritoCompras()
     CalculateTotalCart()
 }
 
-/* const rmProduct = (id, stock = 1) => {
-    const product = Cart.find(p => p.id == id)
-    if(!product) {
-        console.log("Product not found on cart") 
-        return
-    }
-
-    product.stock -= stock
-
-    if(product.stock < 1) {
-        const idx = Cart.indexOff(p => p.id == id)
-        Cart.splice(idx - 1, 1)
-    }
-}
-const clickProd2 = () => {
-
-    const btnRmCarts = document.getElementsByClassName("Agregar")
-    for(const btn of btnRmCarts) {
-        btn.onclick = addCart
-    }
-} */
 
 //LocalStorage y cache
 const updateCache = () => {
@@ -267,7 +244,10 @@ boxlogin.innerHTML = `
     </form>
 `
 
-//falta desarrollar el login
+//falta desarrollar el login//////////////////////////////////////////////////////////////
+
+
+
 
 
 

@@ -68,7 +68,8 @@ const mostrarCarritoCompras = () => {
                     <td>${post.size}</td>
                     <td>${post.unit_price}</td>
                     <td>${post.total}</td>
-                    <td><button class="Quitar btn btn-danger" id="ID-${post.id}">Quitar del Carrito 🛒</button></td>
+                    <td><button class="Agregar btn btn-success" id="ID-${post.id}">Agregar 🛒</button></td>
+                    <td><button class="Quitar btn btn-danger" id="ID-${post.id}">Quitar 🛒</button></td>
             </tr>
         </tbody>
 
@@ -108,12 +109,14 @@ const mostrarCarritoCompras = () => {
     clickProd()
 } */
 
+//AJAX Y FECTCH---------------------------------------
+
 const lista = document.getElementById(`listado`)
 const pedirData = async () => {
     const resp = await fetch(`/data.json`)
     const data = await resp.json()
     
-
+    
     data.forEach((post) => {
         const li = document.createElement(`div`)
         li.className = "card m-3"
@@ -148,7 +151,7 @@ const clickProd = () => {
 
 const addCart = (e) => {
     const productId = parseInt(e.target.id.split("-")[1])
-
+    
     const product = Products.find(p => p.id == productId)
     const productCart = new ProductCart(product)
 

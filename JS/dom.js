@@ -56,19 +56,19 @@ ti.appendChild(lo);
 const mostrarCarritoCompras = () => {
     const boxProducts = document.getElementById("productOnCart")
     let allProducts = ""
-    Cart.forEach(producto => {
+    Cart.forEach(post => {
         allProducts += `
     
         
         <tbody>
             <tr>
-                <th scope="row">${producto.id}</th>
-                    <td>${producto.name}</td>
-                    <td>${producto.quantity}</td>
-                    <td>${producto.size}</td>
-                    <td>${producto.unit_price}</td>
-                    <td>${producto.total}</td>
-                    <td><button class="Quitar btn btn-danger" id="ID-${producto.id}">Quitar del Carrito 🛒</button></td>
+                <th scope="row">${post.id}</th>
+                    <td>${post.name}</td>
+                    <td>${post.quantity}</td>
+                    <td>${post.size}</td>
+                    <td>${post.unit_price}</td>
+                    <td>${post.total}</td>
+                    <td><button class="Quitar btn btn-danger" id="ID-${post.id}">Quitar del Carrito 🛒</button></td>
             </tr>
         </tbody>
 
@@ -84,7 +84,7 @@ const mostrarCarritoCompras = () => {
 
 
 //mostrar productos en la page
-const funcionProductos = () => {
+/* const funcionProductos = () => {
     const boxProducts = document.getElementById("listado")
     let allProducts = ""
     Products.forEach(producto => {
@@ -106,7 +106,34 @@ const funcionProductos = () => {
     boxProducts.innerHTML = allProducts
 
     clickProd()
+} */
+
+const lista = document.getElementById(`listado`)
+const pedirData = async () => {
+    const resp = await fetch(`/data.json`)
+    const data = await resp.json()
+    
+
+    data.forEach((post) => {
+        const li = document.createElement(`div`)
+        li.className = "card m-3"
+        li.innerHTML = `
+                <img src="${post.img}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${post.name}</h5>
+                        <p class="card-text">$ ${post.price}</p>
+                        <p class="card-text">Tamaño: ${post.size}</p>
+                        <button class="Agregar btn btn-success" id="ID-${post.id}">Agregar al Carrito 🛒</button>
+                    
+                    </div>
+        `
+        lista.append(li)
+    })
+    clickProd()
 }
+
+
+pedirData()
 
 //evento para agregar
 const clickProd = () => {
@@ -213,7 +240,7 @@ const CalculateTotalCart = () => {
 
 getCache()
 
-funcionProductos()
+/* funcionProductos() */
 CalculateTotalCart()
 
 

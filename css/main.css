@@ -70,6 +70,9 @@ main .bienvenida .fila {
       height: 240px;
       width: 300px; }
 
+main .ecommerce .row .card {
+  width: 18rem; }
+
 @media screen and (min-width: 768px) {
   /* index */
   main h1 {

@@ -115,6 +115,7 @@ const lista = document.getElementById(`listado`)
 const pedirData = async () => {
     const resp = await fetch(`/data.json`)
     const data = await resp.json()
+    Products = data
     
     
     data.forEach((post) => {
@@ -152,8 +153,8 @@ const clickProd = () => {
 const addCart = (e) => {
     const productId = parseInt(e.target.id.split("-")[1])
     
-    const product = Products.find(p => p.id == productId)
-    const productCart = new ProductCart(product)
+    const p = Products.find(p => p.id == productId)
+    const productCart = new ProductCart(p.id, p.name, p.price, p.img, p.size, p.price, 1)
 
     const productInCart = Cart.find(p => p.id == productId)
 
@@ -229,7 +230,9 @@ const updateCache = () => {
 
 const getCache = () => {
     const cartJSON = localStorage.getItem("productOnCart")
-    if (cartJSON) Cart = JSON.parse(cartJSON)
+    /* if (cartJSON) Cart = JSON.parse(cartJSON) */
+    let daltar = JSON.parse(cartJSON)
+    daltar.forEach(p => Cart.push(new ProductCart(p.id, p.name, p.unit_price, p.img, p.size, p.total, p.quantity)))
     mostrarCarritoCompras()
 }
 

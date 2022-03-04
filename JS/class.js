@@ -1,15 +1,17 @@
 let Cart = []
 
-class ProductCart {
-    constructor(obj) {
-        this.id = obj.id
-        this.name = obj.name
-        this.unit_price = obj.price
-        this.img = obj.img
-        this.size = obj.size
+let Products = []
 
-        this.total = this.unit_price
-        this.quantity = 1
+class ProductCart {
+    constructor(id, name, price, img, size, total, quantity) {
+        this.id = id
+        this.name = name
+        this.unit_price = price
+        this.img = img
+        this.size = size
+
+        this.total = total
+        this.quantity = quantity
     }
     add() {
         this.quantity++
@@ -17,3 +19,4 @@ class ProductCart {
     }
     
 }
+

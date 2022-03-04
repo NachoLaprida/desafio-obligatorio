@@ -1,4 +1,4 @@
-const Products = [
+/* const Products = [
     {id: 1, name: "Alimento Eukanuba para perro Adulto Raza Grande", price: 7400, stock: 10, size: "15kg", img: "https://nanolog.vteximg.com.br/arquivos/ids/160816-1000-1000/10134637.jpg?v=636827358548130000"},
     {id: 2, name: "Alimento Eukanuba para perro Adulto Raza Mediana", price: 7400, stock: 10, size: "15kg", img: "https://puppis.vteximg.com.br/arquivos/ids/161972-1000-1000/Adulto-Medium-Breed-3Kg.jpg?v=636469526958730000"},
     {id: 3, name: "Alimneto Eukanuba para perro Adulto Raza Pequeña", price: 7400, stock: 10, size: "15kg", img: "https://nanolog.vteximg.com.br/arquivos/ids/162376-1000-1000/Sin-titulo.jpg?v=637217746819830000"},
@@ -17,5 +17,5 @@ const Products = [
     {id: 16, name: "Alimento Eukanuba para perro Cachorro Raza Grande", price: 2350, stock: 10, size: "3kg", img: "https://nanolog.vteximg.com.br/arquivos/ids/158372-569-569/10134660.jpg?v=636645814278200000"},
     {id: 17, name: "Alimento Eukanuba para perro Cachorro Raza Mediana", price: 2350, stock: 10, size: "3kg", img: "https://nanolog.vteximg.com.br/arquivos/ids/158507-1000-1000/10134659.jpg?v=636645815008730000"},
     {id: 18, name: "Alimento Eukanuba para perro Cachorro Raza Pequeña", price: 2350, stock: 10, size: "3kg", img: "https://nanolog.vteximg.com.br/arquivos/ids/160837-1000-1000/10134630.jpg?v=636827410355670000"}
-]
+] */
 

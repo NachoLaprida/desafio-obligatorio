@@ -2,6 +2,8 @@ let Cart = []
 
 let Products = []
 
+let UsersCart = [];
+
 class ProductCart {
     constructor(id, name, price, img, size, total, quantity) {
         this.id = id
@@ -18,5 +20,12 @@ class ProductCart {
         this.total += this.unit_price
     }
     
+}
+
+class UserCart {
+    constructor(username, products){
+        this.username = username;
+        this.products = products;
+    }
 }
 

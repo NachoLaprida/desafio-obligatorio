@@ -1,7 +1,7 @@
 let User = []
 
 if(JSON.parse(localStorage.getItem("logins"))!=null) {
-    Usuarios = JSON.parse(localStorage.getItem("logins"))
+    User = JSON.parse(localStorage.getItem("logins"))
 }
 
 class Login {
@@ -11,7 +11,8 @@ class Login {
     }
 }
 
-function registrar(){
+function registrar(e){
+    e.preventDefault()
     const nuevoUsuario = document.getElementById("new-user").value
     const nuevoPass = document.getElementById("new-pass").value
     const buscadorRegistro = User.find(u => u.username == nuevoUsuario)
@@ -22,31 +23,15 @@ function registrar(){
         swal("El usuario y clave deben tener entre 6 y 12 caracteres", "", "error")
     }
     else{
-        /* swal("Usuario creado!")
+        swal("Usuario creado!")
         .then(() => {
         const nuevoRegistro = new Login(nuevoUsuario, nuevoPass)
         User.push(nuevoRegistro)
         const UsuariosJSON = JSON.stringify(User)
         localStorage.setItem("logins", UsuariosJSON)
         sessionStorage.setItem("loginSession", nuevoUsuario)
-        createUser.addEventListener("click", window.location.href = "html/index.html")
-        }) */
-        swal({   
-            title: "Are you sure?",   
-            text: "Once deleted, you will not be able to recover this imaginary file!",   
-            icon: "warning",   
-            buttons: true})
-        .then((willDelete) => {   
-            if (willDelete) {     
-                swal("Poof! Your imaginary file has been deleted!", 
-                {       
-                    icon: "success",     
-                });   
-            } 
-            else {
-                swal("Your imaginary file is safe!");   
-            } 
-        });
+        createUser.addEventListener("click", window.location.href = "index.html")
+        })
     }
 }
 
@@ -54,18 +39,18 @@ const createUser = document.querySelector(".inicio__signup__submit")
 createUser.addEventListener("click", registrar)
 
 
-function logine(){
+function logine(e){
+    e.preventDefault()
     const usuarioLogin = document.getElementById("login-user").value
-    const passLogin = document.getElementById("login-pass")
-    const buscadorLogin = User.findIndex(u => u.username == usuarioLogin).value
-    const buscadorLoginNuevo = !User.find(u => u.username == usuarioLogin)
-    if(buscadorLoginNuevo) {swal("El usuario no se encuentra registrado", "", "warning")}
-    else if(User[buscadorLogin].password!=passLogin){swal("Contraseña incorrecta", "", "warning")}
+    const passLogin = document.getElementById("login-pass").value
+    const buscadorLoginNuevo = User.find(u => u.newUser == usuarioLogin)
+    if(!buscadorLoginNuevo) {swal("El usuario no se encuentra registrado", "", "warning")}
+    else if(buscadorLoginNuevo.newUserPass!=passLogin){swal("Contraseña incorrecta", "", "warning")}
     else{
         swal("Has ingresado correctamente!", "", "success")
         .then(() => {    
             sessionStorage.setItem("loginSession", usuarioLogin)
-            createUser.addEventListener("click", window.location = "html/index.html")
+            createUser.addEventListener("click", window.location = "index.html")
         })
     }
 }

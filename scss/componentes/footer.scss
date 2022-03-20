@@ -1,0 +1,73 @@
+/* ---------------  FOOTER ---------------------- */
+
+
+footer{
+    background-color: #262626;
+    color: #fff;
+    .container-fluid{
+        .row{
+            .develope{
+                h2{
+                    font-size: 24px;
+                }
+                p{
+                    color: #bdb4b4;
+                }
+            }
+            .explorer{
+                h2{
+                    font-size: 24px;
+                }
+                .box{
+                    padding-left: 0;
+                    li{                            }
+                        a{
+                            text-decoration: none;
+                            color: #bdb4b4;
+                            &:hover{
+                                text-decoration: underline;
+                        }
+                    }
+                }                
+            }
+            .social-network{
+                h2{
+                    font-size: 24px;
+                }
+                p{
+                    
+                }
+                a{
+                    padding: 10px;
+                    i{
+                        font-size: 30px;
+                    }
+                }
+            }
+            .legal{
+                display: flex;
+                flex-direction: column;
+                align-content: center ;
+                h2{
+                    font-size: 24px;
+                    color: #fff;
+                }
+                .box{
+                    padding-left: 0;
+                    
+                    li{
+
+                        a{
+                            text-decoration: none;
+                            color: #bdb4b4;
+                            &:hover{
+                                text-decoration: underline;
+                        }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}   

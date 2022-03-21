@@ -30,7 +30,7 @@ function registrar(e){
         const UsuariosJSON = JSON.stringify(User)
         localStorage.setItem("logins", UsuariosJSON)
         sessionStorage.setItem("loginSession", nuevoUsuario)
-        createUser.addEventListener("click", window.location.href = "index.html")
+        createUser.addEventListener("click", window.location.href = "paginas/ecommerce.html")
         })
     }
 }
@@ -50,7 +50,7 @@ function logine(e){
         swal("Has ingresado correctamente!", "", "success")
         .then(() => {    
             sessionStorage.setItem("loginSession", usuarioLogin)
-            createUser.addEventListener("click", window.location = "index.html")
+            createUser.addEventListener("click", window.location = "paginas/ecommerce.html")
         })
     }
 }

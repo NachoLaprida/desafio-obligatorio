@@ -1,8 +1,9 @@
+let UsersCart = [];
+
 let Cart = []
 
 let Products = []
 
-let UsersCart = [];
 
 class ProductCart {
     constructor(id, name, price, img, size, total, quantity) {

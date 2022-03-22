@@ -2,9 +2,9 @@
     /* ecommerce */
     main{
         h1{
-            /* font-size: 60px;
+            font-size: 60px;
             -webkit-text-fill-color: #fff;
-            -webkit-text-stroke: black 2px;  */
+            -webkit-text-stroke: black 2px; 
         }
         .bienvenida{
             .fila{
@@ -15,13 +15,58 @@
                     text-align: left;
                     align-self: center;
                     .contenedor-text{
+                        font-size: 20px;
                     }
                 }
                 .columna-img{
                     
                     .contenedor-img{
                         img{
-                            
+                            height: 340px;
+                            width: 400px;
+                        }
+                    }
+                }
+            }
+        }
+        .showProducts{
+            h2{
+    
+            }
+            .ecommerce{
+                .row{
+                    .card{
+                        width: 18rem;
+                    }
+                }
+                h2{
+                    
+                }
+                table{
+                    
+                    thead{
+                        tr{
+                            th{
+    
+                            }
+                        }
+                    }
+                    #tbody{
+                        tr{
+                            th{
+    
+                            }
+                        }
+                    }
+                }
+                table{
+                    
+
+                    thead{
+                        tr{
+                            th{
+                                
+                            }
                         }
                     }
                 }

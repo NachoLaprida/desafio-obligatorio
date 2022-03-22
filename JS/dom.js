@@ -1,11 +1,11 @@
 
 // debes crear un contenedor
-let ti = document.getElementById("pTienda");
+/* let ti = document.getElementById("pTienda"); */
 
 //Add titulo
-let lo = document.createElement("div");
+/* let lo = document.createElement("div");
 
-ti.appendChild(lo);
+ti.appendChild(lo); */
 
 
 
@@ -195,9 +195,9 @@ const CalculateTotalCart = () => {
 getCache()
 CalculateTotalCart()
 
-
-
-
+//Saludo para ususario
+const presentation = document.getElementById("userLogin")
+presentation.innerHTML = `BIENVENIDO ${(sessionStorage.getItem("loginSession")).toUpperCase()}` 
 
 
 

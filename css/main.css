@@ -1,7 +1,7 @@
 /* ------------ MAIN --------------- */
 /* ------- HEADER ---------- */
 header .navbar {
-  background-color: yellowgreen; }
+  background-color: #198754; }
   header .navbar .container-fluid .navbar-brand .logo {
     height: 60px;
     width: 60px; }
@@ -48,8 +48,20 @@ footer {
         footer .container-fluid .row .legal .box li a:hover {
           text-decoration: underline; }
 
-main h1 {
-  font-size: 60px;
+main {
+  margin: 10px; }
+  main .container-index {
+    box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    width: 70%; }
+    main .container-index .titulo-index {
+      background-color: #198754;
+      color: white;
+      border-radius: 100px; }
+
+main #userLogin {
+  font-size: 40px;
   -webkit-text-fill-color: #fff;
   -webkit-text-stroke: black 2px; }
 
@@ -68,17 +80,29 @@ main .bienvenida .fila {
     box-shadow: 0px 15px 15px rgba(0, 0, 0, 0.5); }
     main .bienvenida .fila .columna-img .contenedor-img img {
       height: 240px;
-      width: 300px; }
+      width: 280px; }
 
-main .ecommerce .row .card {
+main .showProducts h2 {
+  font-size: 30px;
+  padding: 5px 40px;
+  text-decoration: underline;
+  text-align: center; }
+
+main .showProducts .ecommerce .row .card {
   width: 18rem; }
 
+main .showProducts .ecommerce h2 {
+  font-size: 30px;
+  padding: 5px 40px;
+  text-decoration: underline;
+  text-align: center; }
+
 @media screen and (min-width: 768px) {
-  /* index */
+  /* ecommerce */
   main h1 {
-    /* font-size: 60px;
-            -webkit-text-fill-color: #fff;
-            -webkit-text-stroke: black 2px;  */ }
+    font-size: 60px;
+    -webkit-text-fill-color: #fff;
+    -webkit-text-stroke: black 2px; }
   main .bienvenida .fila {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -86,6 +110,13 @@ main .ecommerce .row .card {
     main .bienvenida .fila .columna-text {
       text-align: left;
       align-self: center; }
+      main .bienvenida .fila .columna-text .contenedor-text {
+        font-size: 20px; }
+    main .bienvenida .fila .columna-img .contenedor-img img {
+      height: 340px;
+      width: 400px; }
+  main .showProducts .ecommerce .row .card {
+    width: 18rem; }
   /* --- footer --- */
   footer .container-fluid .row .col-4 .link-arriba {
     width: 40%; } }

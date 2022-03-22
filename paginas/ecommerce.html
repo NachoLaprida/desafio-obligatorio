@@ -35,8 +35,8 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html">
-                    <img class="logo" src="imagenes/Mi-primera-Tienda-Online.jpg" alt="">
+                <a class="navbar-brand" href="ecommerce.html">
+                    <img class="logo" src="../imagenes/perro.jpg" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -45,13 +45,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item m-3">
-                            <a class="nav-link text-center" aria-current="page" href="index.html">Home</a>
+                            <a class="nav-link text-center" aria-current="page" href="ecommerce.html">Home</a>
                         </li>
                         <li class="nav-item m-3">
-                            <a class="nav-link text-center" href="paginas/productos.html">Productos</a>
+                            <a class="nav-link text-center" href="productos.html">Productos</a>
                         </li>
                         <li class="nav-item m-3">
-                            <a class="nav-link text-center" href="paginas/nosotros.html">Nosotros</a>
+                            <a class="nav-link text-center" href="nosotros.html">Nosotros</a>
                         </li>
                     </ul>
                     <form class="d-flex">
@@ -67,79 +67,58 @@
             
         </section>
         
-        <h1 class="text-center">TIENDA</h1>
+        <h1 id="userLogin" class="text-center m-3">TIENDA</h1>
         <section class="bienvenida">
             <div class="fila">
                 <div class="columna-text">
                     <div class="contenedor-text">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti sapiente velit quaerat modi
-                        voluptate. Asperiores aut dignissimos inventore, veniam voluptate eos deleniti doloribus,
-                        dolores possimus labore deserunt porro mollitia esse.
+                        En <strong>Bebuinos</strong> reconocemos a las mascotas como un miembro más de la familia, a las que debemos cuidar, proteger, y brindar el mejor cuidado para que tengan una excelente calidad de vida. Para ello ofrecemos la más amplia variedad en productos alimenticios, accesorios, farmacia, servicios experimentados (veterinaria, peluquería), mascotas para adopción , y mucho más!.
                     </div>
                 </div>
                 <div class="columna-img">
                     <div class="contenedor-img">
-                        <img src="../imagenes/Mi-primera-Tienda-Online.jpg" alt="">
+                        <img src="../imagenes/perrosano.jpg" alt="">
                     </div>
                 </div>
             </div>
         </section>
-<!-- 
-        <div id="componente" class="text-center">
-            <h2>vamos los pibes loco</h2>
-        </div>
-
-        <section>
-            <div id="newTitulo" class="container my-5 border"> -->
-                <!-- Aqui va el titulo que creaste desdes JS -->
-<!--                 <div id="productosTienda">
-
-                </div>
-            </div>
-        </section> -->
-        <section>
-            <div id="pTienda">
-
-            </div>
-        </section>
-        <section>
-            <h2 class="p-3">Nuestros Productos</h2>
+        <section class="showProducts">
+            <h2 class="p-3"><i class="fa-solid fa-dog"></i>Nuestros Productos</h2>
             <div class=" ecommerce container">
                 <div id="listado" class="row">
                 </div>
-                <h2>Carrito de compras</h2>
-                <div  class="row"></div>
-                <table   class="table table-striped table-dark">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Producto</th>
-                            <th scope="col">Cantidad</th>
-                            <th scope="col">Tamaño</th>
-                            <th scope="col">Precio Unitario</th>
-                            <th scope="col">Total $</th>
-                            <th scope="col"></th>
-                            <th scope="col"></th>
-                        </tr>
-                    </thead>
-                    <tbody id="productOnCart">
+                <h2><i class="fa-solid fa-cat"></i>Carrito de compras</h2>
+                    <table class="table table-striped table-dark camus table-responsive">
+                        <thead>
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Producto</th>
+                                <th scope="col">Cantidad</th>
+                                <th scope="col">Tamaño</th>
+                                <th scope="col">Precio Unitario</th>
+                                <th scope="col">Total $</th>
+                                <th scope="col"></th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody id="productOnCart">
 
-                    </tbody>
-                </table>
-                <table class="table table-striped table-dark">
-                    <thead>
-                        <tr>
-                            <th class="col text-center fs-3" id="monto-total"></th>
-                        </tr>
-                    </thead>
-                </table>
+                        </tbody>
+                    </table>
+                    <table class="table table-striped table-dark">
+                        <thead>
+                            <tr>
+                                <th class="col text-center fs-3" id="monto-total"></th>
+                            </tr>
+                        </thead>
+                    </table>
+
             </div>
         </section>
         
     </main>
     <footer>
         <footer>
-
             <div class="container-fluid">
                 <div class="row d-flex">
                     <div class="develope col-lg-3 col-md-6 col-sm-12 p-2">
@@ -149,7 +128,7 @@
                     <div class="explorer col-lg-3 col-md-6 col-sm-12 p-2">
                         <h2>Explorador</h2>
                         <ul class="box">
-                            <li><a href="index.html">Home</a></li>
+                            <li><a href="ecommerce.html">Home</a></li>
 
                         </ul>
                     </div>
@@ -182,7 +161,7 @@
 
     </footer>
 
-    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="../bootstrap/css/bootstrap.css"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script> <!-- sweetalert -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script><!-- toastify -->
 
@@ -190,6 +169,7 @@
     <!-- <script src="JS/info.js"></script> --> 
     <script src="../JS/data.js"></script>
     <script src="../JS/class.js"></script>
+    <script src="../JS/login3.js"></script>
     <script src="../JS/dom.js"></script>
     <!-- <script src="JS/objeto.js"></script>
     <script src="desafio.js"></script> -->

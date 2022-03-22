@@ -11,6 +11,8 @@ class Login {
     }
 }
 
+//Registro de un usuario nuevo --------------------------
+
 function registrar(e){
     e.preventDefault()
     const nuevoUsuario = document.getElementById("new-user").value
@@ -38,6 +40,7 @@ function registrar(e){
 const createUser = document.querySelector(".inicio__signup__submit")
 createUser.addEventListener("click", registrar)
 
+//Login de usuario -------------------------------------
 
 function logine(e){
     e.preventDefault()

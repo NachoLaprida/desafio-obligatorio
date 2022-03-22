@@ -97,6 +97,9 @@ main .showProducts .ecommerce h2 {
   text-decoration: underline;
   text-align: center; }
 
+main {
+  min-height: 90vh; }
+
 @media screen and (min-width: 768px) {
   /* ecommerce */
   main h1 {

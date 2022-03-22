@@ -42,7 +42,7 @@ const mostrarCarritoCompras = () => {
 
 
 
-//AJAX Y FECTCH---------------------------------------
+//AJAX Y FECTCH--------------------------------------- productos
 
 const lista = document.getElementById(`listado`)
 const pedirData = async () => {
@@ -149,7 +149,7 @@ const RmCart = (e) => {
 }
 
 
-//LocalStorage y cache
+//LocalStorage y cache------------------- carrito de cada usuario en el almacenamiento
 const updateCache = () => {
     const username = sessionStorage.getItem("loginSession");
 
@@ -169,6 +169,13 @@ const updateCache = () => {
     localStorage.setItem("usersCart", usersCartJson)
 }
 
+const clearCart = () => {
+    Cart = [];
+    updateCache();
+}
+
+
+//
 const getCache = () => {
     const usersCartJson = localStorage.getItem("usersCart")
 
@@ -181,23 +188,65 @@ const getCache = () => {
     if(userCart) {
         userCart.products.forEach(p => Cart.push(new ProductCart(p.id, p.name, p.unit_price, p.img, p.size, p.total, p.quantity)))
     }
-    mostrarCarritoCompras()
-}
 
+    // to do
+    mostrarCarritoCompras()
+    return userCart;
+}
+//Total de compra---------------------------------------
 const CalculateTotalCart = () => {
     let suma = 0
     Cart.forEach(p => suma += p.total)
 
     const elemntTotal = document.getElementById("monto-total")
-    elemntTotal.innerHTML = `Total $${suma}`
+    elemntTotal.innerHTML = `
+        Total $${suma}    `
 }
 
 getCache()
 CalculateTotalCart()
 
-//Saludo para ususario
-const presentation = document.getElementById("userLogin")
-presentation.innerHTML = `BIENVENIDO ${(sessionStorage.getItem("loginSession")).toUpperCase()}` 
+//Finalizacion de la compra---------------------------------------
+
+/* function comprar(e) {
+    const buyASD = document.getElementById("buyF")
+    const buyProducts = parseInt(e.target.id.split("-")[1])
+    const buyProductsCart = Cart.find(p => p.id == buyProducts)
+
+    buyProductsCart.innerHTML = `finaliza tu compra ${buyProductsCart}`
+} */
+
+
+const clickBuy = () => {
+//1-buscar lista de productos del carrito
+    const products = getCache().products;
+    if(products && products.length == 0) {
+        swal("No hay productos en el carrito", "", "error")
+        return;
+    }
+    
+//2 que voy hacer con esa lista
+//limpio cache
+    clearCart()
+//generar pedido to do
+
+//cartel de compra, compra satifactoria, redirige a la home    
+    swal("Has finalizado tu compra, te redigiremos a la home", "", "success")
+    .then(() => {window.location = "ecommerce.html"})
+}
+
+(function () {
+    //comprar
+    const btnComprar = document.getElementById("comprar")
+    btnComprar.addEventListener("click", clickBuy)
+    //Saludo para usuario
+    const presentation = document.getElementById("userLogin")
+    presentation.innerHTML = `BIENVENIDO ${(sessionStorage.getItem("loginSession")).toUpperCase()}` 
+})();
+
+
+
+
 
 
 

@@ -97,14 +97,13 @@ main .showProducts h2 {
 main .showProducts .ecommerce .row .card {
   width: 18rem; }
 
-main .showProducts .ecommerce h2 {
-  font-size: 30px;
-  padding: 5px 40px;
-  text-decoration: underline;
-  text-align: center; }
-
 main {
   min-height: 90vh; }
+  main h2 {
+    font-size: 30px;
+    padding: 5px 40px;
+    text-decoration: underline;
+    text-align: center; }
 
 @media screen and (min-width: 768px) {
   /* ecommerce */

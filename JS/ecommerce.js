@@ -33,7 +33,7 @@ const handleAddCartClick = () => {
 
 (function(){
     const presentation = document.getElementById("userLogin");
-    presentation.innerHTML = `BIENVENIDO ${(sessionStorage.getItem("loginSession")).toUpperCase()}` ;
+    presentation.innerHTML = `BIENVENIDO/A ${(sessionStorage.getItem("loginSession")).toUpperCase()}` ;
     
     pedirData();
 

@@ -27,7 +27,7 @@
     <meta name="keywords" content="JavaScript coderhouse">
     <!-- DESCRIPTION -->
     <meta name="description" content="Sitio creado para proyecto curso JS de coderhouse">
-    <title>Document</title>
+    <title>Carrito</title>
 </head>
 <body>
     <header class="sticky-top">
@@ -55,30 +55,34 @@
     </header>
     <main>
         <h2><i class="fa-solid fa-cat"></i>Carrito de compras</h2>
-            <table class="table table-striped table-dark camus table-responsive">
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Producto</th>
-                        <th scope="col">Cantidad</th>
-                        <th scope="col">Tamaño</th>
-                        <th scope="col">Precio Unitario</th>
-                        <th scope="col">Total $</th>
-                        <th scope="col"></th>
-                        <th scope="col"></th>
-                    </tr>
-                </thead>
-                <tbody id="productOnCart">
+            <div class="table-responsive">
+                <table class="table table-striped table-dark camus">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Cantidad</th>
+                            <th scope="col">Tamaño</th>
+                            <th scope="col">Precio Unitario</th>
+                            <th scope="col">Total $</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="productOnCart">
 
-                </tbody>
-            </table>
-            <table class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th class="col text-center fs-3" id="monto-total"></th>
-                    </tr>
-                </thead>
-            </table>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-striped table-dark">
+                    <thead>
+                        <tr>
+                            <th class="col text-center fs-3" id="monto-total"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
             <button id="comprar" class="btn btn-primary">Finalizar mi compra</button>
     </main>
     <footer>

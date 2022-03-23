@@ -17,12 +17,16 @@ function registrar(e){
     e.preventDefault()
     const nuevoUsuario = document.getElementById("new-user").value
     const nuevoPass = document.getElementById("new-pass").value
-    const buscadorRegistro = User.find(u => u.username == nuevoUsuario)
+    const buscadorRegistro = User.find(u => u.newUser == nuevoUsuario)
     
-    if(buscadorRegistro){swal("El usuario ya se encuentra registrado", "", "warning")}
+    if(buscadorRegistro) {
+        swal("El usuario ya se encuentra registrado", "", "warning") 
+        return;
+    }
     
     else if(nuevoUsuario.length < 6 || nuevoUsuario.length > 12 || nuevoPass.length < 6 || nuevoPass.length > 12 ){
         swal("El usuario y clave deben tener entre 6 y 12 caracteres", "", "error")
+        return
     }
     else{
         swal("Usuario creado!")

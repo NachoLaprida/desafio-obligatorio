@@ -1,10 +1,3 @@
-/* let UsersCart = [];
-
-let Cart = []
-
-let Products = []
- */
-
 class ProductCart {
     constructor(id, name, price, img, size, total, quantity) {
         this.id = id

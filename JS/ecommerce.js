@@ -1,7 +1,7 @@
 const lista = document.getElementById(`listado`)
 
 const pedirData = async () => {
-    const resp = await fetch(`/data.json`)
+    const resp = await fetch(`../data.json`)
     const data = await resp.json()
     Products = data
     
